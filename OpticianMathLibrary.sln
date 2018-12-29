@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticianMathLibrary", "OpticianMathLibrary\OpticianMathLibrary.csproj", "{FCFBB6CD-C493-44F6-81C6-DF74378DA528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticianMathLibraryTests", "OpticianMathLibraryTests\OpticianMathLibraryTests.csproj", "{417A9BA0-342D-4109-AC25-98D5CD6EC702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTER", "TESTER\TESTER.csproj", "{B4E1C91C-0D92-47AE-AD47-9C99985F1812}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCFBB6CD-C493-44F6-81C6-DF74378DA528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFBB6CD-C493-44F6-81C6-DF74378DA528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFBB6CD-C493-44F6-81C6-DF74378DA528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFBB6CD-C493-44F6-81C6-DF74378DA528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E1C91C-0D92-47AE-AD47-9C99985F1812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E1C91C-0D92-47AE-AD47-9C99985F1812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E1C91C-0D92-47AE-AD47-9C99985F1812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E1C91C-0D92-47AE-AD47-9C99985F1812}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
