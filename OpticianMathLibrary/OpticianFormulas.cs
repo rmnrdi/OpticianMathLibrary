@@ -68,11 +68,11 @@ namespace OpticianMathLibrary
         /// </summary>
         /// <param name="aMeasure">In millimeters.</param>
         /// <param name="dblMeasure">In millimeters.</param>
-        /// <param name="monoPDOD">In millimeters</param>
+        /// <param name="monoPD">In millimeters</param>
         /// <returns>Monocular decentration</returns>
-        public static double MonocularDecentration(double aMeasure, double dblMeasure, double monoPDOD)
+        public static double MonocularDecentration(double aMeasure, double dblMeasure, double monoPD)
         {
-            return Math.Round(((aMeasure + dblMeasure) / 2) - monoPDOD, 2);
+            return Math.Round(((aMeasure + dblMeasure) / 2) - monoPD, 2);
         }
         /// <summary>
         /// Calculates the bifocal segment drop. Inputs are the segment height and B measurement in millimeters. 
