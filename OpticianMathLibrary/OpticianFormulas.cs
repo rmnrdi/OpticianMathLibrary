@@ -59,7 +59,7 @@ namespace OpticianMathLibrary
         /// <param name="dblMeasure">In millimeters.</param>
         /// <param name="binocularPD">In millimeters.</param>
         /// <returns>Binocular decentration</returns>
-        public static object BinocularDecentration(double aMeasure, double dblMeasure, double binocularPD)
+        public static double BinocularDecentration(double aMeasure, double dblMeasure, double binocularPD)
         {
             return Math.Round((aMeasure + dblMeasure) - binocularPD, 1);
         }

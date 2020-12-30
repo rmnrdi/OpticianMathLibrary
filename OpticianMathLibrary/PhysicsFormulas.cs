@@ -14,7 +14,7 @@ namespace OpticianMathLibrary
         /// <summary>
         /// Speed of light constant
         /// </summary>
-        public const double lightSpeed = 2.9979e10;
+        public const double LIGHTSPEED = 2.9979e10;
 
         /// <summary>
         /// Calculates the velocity of a wave. Inputs are frequency and wavelength.
@@ -56,7 +56,7 @@ namespace OpticianMathLibrary
         /// <returns>Illumination</returns>
         public static double Illumination(double distance)
         {
-            return Math.Round(1 / (distance * distance), 3);
+            return Math.Round(1 / (distance * distance), 10);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace OpticianMathLibrary
         public static double IndexOfRefraction(double cInMaterial)
         {
 
-            return lightSpeed / cInMaterial;
+            return LIGHTSPEED / cInMaterial;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace OpticianMathLibrary
         /// <returns>Speed of light in a material</returns>
         public static double SpeedOfLightInMaterial(double index)
         {
-            return lightSpeed / index;
+            return LIGHTSPEED / index;
         }
     }
 }
