@@ -46,11 +46,11 @@ namespace OpticianMathLibrary
         /// Calculates the surface power of lens. Input is the refractive index and radius of curvature in millimeters.
         /// </summary>
         /// <param name="index">Index of refraction</param>
-        /// <param name="radiusMM">Radius curvature in mm</param>
+        /// <param name="radiusOfCurvature">Radius curvature in mm</param>
         /// <returns>Surface power in diopters</returns>
-        public static double SurfacePower(double index, double radiusMM)
+        public static double SurfacePower(double index, double radiusOfCurvature)
         {
-            return ((index - 1) * 1000) / radiusMM;
+            return ((index - 1) * 1000) / radiusOfCurvature;
         }
 
         /// <summary>
@@ -88,19 +88,19 @@ namespace OpticianMathLibrary
 
         /// <summary>
         /// Calculates the nominal power  of lens in diopters. Input is the index of refraction and 
-        /// radius of curvature for front/back surfaces in meters.
+        /// radius of curvature for front/back surfaces in centimmeters.
         /// <para>
         /// NOTE: You must enter the radius of curvature as plus or minus depending on the surface.
         /// </para>
         /// </summary>
         /// <param name="index">Index of refraction</param>
-        /// <param name="radiusFrontCM">Plus or Minus. In meters</param>
-        /// <param name="radiusBackCM">Plus or Minus. In meters</param>
+        /// <param name="radiusOfCurvatureFront">Plus or Minus. In centimeters</param>
+        /// <param name="radiusOfCurvatureBack">Plus or Minus. In centimeters</param>
         /// <returns>Nominal lens power in diopters</returns>
-        public static double LensMakersEquation(double index, double radiusFrontCM, double radiusBackCM)
+        public static double LensMakersEquation(double index, double radiusOfCurvatureFront, double radiusOfCurvatureBack)
         {
-            double radiusFrontInMeters = radiusFrontCM / 100;
-            double radiusBackInMeters = radiusBackCM / 100;
+            double radiusFrontInMeters = radiusOfCurvatureFront / 100;
+            double radiusBackInMeters = radiusOfCurvatureBack / 100;
 
             double frontSurfaceInDiopters = ((index - 1) / radiusFrontInMeters);
             double backSurfaceInDiopters = ((index - 1) / radiusBackInMeters);
@@ -124,11 +124,11 @@ namespace OpticianMathLibrary
         /// </summary>
         /// <param name="sphere">In diopters</param>
         /// <param name="cylinder">In diopters</param>
-        /// <param name="thetaDegrees">Axis of cylinder in degrees</param>
+        /// <param name="DegreesTheta">Axis of cylinder in degrees</param>
         /// <returns>Power in the horizontal meridian</returns>
-        public static double PowerMeridian180(double sphere, double cylinder, int thetaDegrees)
+        public static double PowerMeridian180(double sphere, double cylinder, int DegreesTheta)
         {
-            double theta180 = thetaDegrees - 180;
+            double theta180 = DegreesTheta - 180;
             double thetaRadians = theta180 * (Math.PI / 180);
             double sinTheta = Math.Sin(thetaRadians);
             double sinSquareTheta = Math.Pow(sinTheta, 2);
@@ -140,11 +140,11 @@ namespace OpticianMathLibrary
         /// </summary>
         /// <param name="sphere">In diopters</param>
         /// <param name="cylinder">In diopters</param>
-        /// <param name="thetaDegrees">Axis of cylinder in degrees</param>
+        /// <param name="DegreesTheta">Axis of cylinder in degrees</param>
         /// <returns>Power in the vertical meridian</returns>
-        public static double PowerMeridian90(double sphere, double cylinder, int thetaDegrees)
+        public static double PowerMeridian90(double sphere, double cylinder, int DegreesTheta)
         {
-            double theta90 = thetaDegrees - 90;
+            double theta90 = DegreesTheta - 90;
             double thetaRadians = theta90 * (Math.PI / 180);
             double sinTheta = Math.Sin(thetaRadians);
             double sinSquareTheta = Math.Pow(sinTheta, 2);
@@ -158,11 +158,11 @@ namespace OpticianMathLibrary
         /// </para>
         /// </summary>
         /// <param name="originalPower">In diopters</param>
-        /// <param name="vertexChangeMM">Closer is +. Further is -.In meters</param>
+        /// <param name="vertexChange">Closer is +. Further is -.In millimeters</param>
         /// <returns>Effective lens power</returns>
-        public static double EffectivePower(double originalPower, double vertexChangeMM)
+        public static double EffectivePower(double originalPower, double vertexChange)
         {
-            double vertexChangeInMeters = vertexChangeMM / 1000;
+            double vertexChangeInMeters = vertexChange / 1000;
             return Math.Round(originalPower / (1 + vertexChangeInMeters * originalPower), 2);
         }
 
@@ -173,11 +173,11 @@ namespace OpticianMathLibrary
         /// </para>
         /// </summary>
         /// <param name="originalPower">In diopters</param>
-        /// <param name="vertexChangeMM">Closer is +. Further is -.In meters</param>
+        /// <param name="vertexChange">Closer is +. Further is -.In millimeters</param>
         /// <returns>Compensated lens power</returns>
-        public static double CompensatedPower(double originalPower, double vertexChangeMM)
+        public static double CompensatedPower(double originalPower, double vertexChange)
         {
-            double vertexChangeInMeters = vertexChangeMM / 1000;
+            double vertexChangeInMeters = vertexChange / 1000;
             double compensatedPower = (originalPower / (1 - vertexChangeInMeters * originalPower));
             return Math.Round(compensatedPower, 2);
         }
@@ -190,12 +190,12 @@ namespace OpticianMathLibrary
         /// </para>
         /// </summary>
         /// <param name="originalPower">In diopters</param>
-        /// <param name="vertexChangeMM">In millimeters</param>
+        /// <param name="vertexChange">In millimeters</param>
         /// <returns>Approximate change in power</returns>
-        public static double VertexPowerChangeApprox(double originalPower, double vertexChangeMM)
+        public static double VertexPowerChangeApprox(double originalPower, double vertexChange)
         {
             double originalPowerSquared = Math.Pow(originalPower, 2);
-            double vertexPowerChangeApprox = (vertexChangeMM * originalPowerSquared) / 1000;
+            double vertexPowerChangeApprox = (vertexChange * originalPowerSquared) / 1000;
             return Math.Round(vertexPowerChangeApprox, 2);
         }
 
@@ -204,12 +204,12 @@ namespace OpticianMathLibrary
         /// </summary>
         /// <param name="frontSurfacePower">In diopters</param>
         /// <param name="backSurfacePower">In diopters</param>
-        /// <param name="thicknessMM">In meters.</param>
+        /// <param name="thickness">In milimeters.</param>
         /// <param name="index">Index of refraction</param>
         /// <returns>Back vertex power</returns>
-        public static double BackVertexPower(double frontSurfacePower, double backSurfacePower, double thicknessMM, double index)
+        public static double BackVertexPower(double frontSurfacePower, double backSurfacePower, double thickness, double index)
         {
-            double thicknessInMeters = thicknessMM / 1000;
+            double thicknessInMeters = thickness / 1000;
             double thicknessFactor = thicknessInMeters / index;
             double denominator = (1 - thicknessFactor * frontSurfacePower);
             double backVertexPower = frontSurfacePower / denominator + backSurfacePower;
@@ -221,12 +221,12 @@ namespace OpticianMathLibrary
         /// </summary>
         /// <param name="frontSurfacePower">In diopters</param>
         /// <param name="backSurfacePower">In diopters</param>
-        /// <param name="thicknessMM">In meters</param>
+        /// <param name="thickness">In millimeters</param>
         /// <param name="index">Index of refraction</param>
         /// <returns>Front vertex power</returns>
-        public static double FrontVertexPower(double frontSurfacePower, double backSurfacePower, double thicknessMM, double index)
+        public static double FrontVertexPower(double frontSurfacePower, double backSurfacePower, double thickness, double index)
         {
-            double thicknessInMeters = thicknessMM / 1000;
+            double thicknessInMeters = thickness / 1000;
             double thicknessFactor = thicknessInMeters / index;
             double denominator = (1 - thicknessFactor * backSurfacePower);
             double frontVertexPower = backSurfacePower / denominator + frontSurfacePower;
