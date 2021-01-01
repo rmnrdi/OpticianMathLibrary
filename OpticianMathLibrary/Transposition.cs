@@ -14,19 +14,19 @@ namespace OpticianMathLibrary
         /// <summary>
         /// Calculates the transposed sphere value of lens with plus cylinder. Inputs are sphere and cylinder.
         /// </summary>
-        /// <param name="sphere">In diopters</param>
-        /// <param name="cylinder">In diopters</param>
+        /// <param name="spherePower">In diopters</param>
+        /// <param name="cylinderPower">In diopters</param>
         /// <returns>Transposed sphere power</returns>
-        public static double TransposeSpherePower(double sphere, double cylinder)
+        public static double TransposeSpherePower(double spherePower, double cylinderPower)
         {
             double newSphere = 0;
-            if (cylinder > 0)
+            if (cylinderPower > 0)
             {
-                return newSphere = sphere + cylinder;
+                return newSphere = spherePower + cylinderPower;
             }
-            if (cylinder < 0)
+            if (cylinderPower < 0)
             {
-                return sphere;
+                return spherePower;
             }
             return newSphere;
         }
@@ -34,23 +34,23 @@ namespace OpticianMathLibrary
         /// <summary>
         /// Transposes the axis of a prescription with plus cylinder. Inputs are cylinder and cylinder axis.
         /// </summary>
-        /// <param name="cylinder">In diopters.</param>
-        /// <param name="axis">In degrees</param>
+        /// <param name="cylinderPower">In diopters.</param>
+        /// <param name="cylinderAxis">In degrees</param>
         /// <returns>Transposed axis</returns>
-        public static double TransposeAxis(double cylinder, double axis)
+        public static double TransposeAxis(double cylinderPower, double cylinderAxis)
         {
             double axisTransposed = 0;
-            if (cylinder > 0 && axis < 90)
+            if (cylinderPower > 0 && cylinderAxis < 90)
             {
-                return axisTransposed = (axis + 90);
+                return axisTransposed = (cylinderAxis + 90);
             }
-            if (cylinder > 0 && axis > 90)
+            if (cylinderPower > 0 && cylinderAxis > 90)
             {
-                return axisTransposed = (axis - 90);
+                return axisTransposed = (cylinderAxis - 90);
             }
-            if (cylinder < 0)
+            if (cylinderPower < 0)
             {
-                return axis;
+                return cylinderAxis;
             }
             return axisTransposed;
         }
@@ -60,18 +60,18 @@ namespace OpticianMathLibrary
         /// <summary>
         /// Switches the sign of the cylindrical component for a lens with plus power. Input is cylinder. 
         /// </summary>
-        /// <param name="cylinder">In diopters</param>
+        /// <param name="cylinderPower">In diopters</param>
         /// <returns>Trasposed cylinder sign</returns>
-        public static double TransposedCylinderSign(double cylinder)
+        public static double TransposedCylinderSign(double cylinderPower)
         {
             double newCylinderSign = 0;
-            if (cylinder > 0)
+            if (cylinderPower > 0)
             {
-                return newCylinderSign = cylinder * -1;
+                return newCylinderSign = cylinderPower * -1;
             }
-            if (cylinder < 0)
+            if (cylinderPower < 0)
             {
-                return cylinder;
+                return cylinderPower;
             }
             return newCylinderSign;
         }

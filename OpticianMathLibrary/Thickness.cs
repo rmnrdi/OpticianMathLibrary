@@ -17,7 +17,7 @@ namespace OpticianMathLibrary
         /// <param name="radiusOfCurvature">In millimeters</param>
         /// <param name="lensDiameter">In millimeters</param>
         /// <returns>Sagittal depth</returns>
-        public static double SagittalDepth(double radiusOfCurvature, double lensDiameter)
+        public static double SagittalDepthApprox(double radiusOfCurvature, double lensDiameter)
         {
             double semiDiameter = lensDiameter / 2;
             double radiusSquared = radiusOfCurvature * radiusOfCurvature;
@@ -76,7 +76,7 @@ namespace OpticianMathLibrary
         /// <param name="lensDiameter">In millimeters</param>
         /// <param name="index">Index of refraction</param>
         /// <returns>Approximate sagittal depth</returns>
-        public static double ApproximateSagFormula(double surfacePower, double lensDiameter, double index)
+        public static double ApproximateSag(double surfacePower, double lensDiameter, double index)
         {
             double semiDiameter = lensDiameter / 2;
             double semiDiameterSquared = semiDiameter * semiDiameter;
