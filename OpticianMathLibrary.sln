@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticianMathLibrary", "OpticianMathLibrary\OpticianMathLibrary.csproj", "{FCFBB6CD-C493-44F6-81C6-DF74378DA528}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticianMathLibraryTests", "OpticianMathLibraryTests\OpticianMathLibraryTests.csproj", "{417A9BA0-342D-4109-AC25-98D5CD6EC702}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTER", "TESTER\TESTER.csproj", "{B4E1C91C-0D92-47AE-AD47-9C99985F1812}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RobsWebsiteV2", "..\RobsWebsiteV2\RobsWebsiteV2\RobsWebsiteV2.csproj", "{43FF06C4-56F5-4889-849D-7D22DBC280CA}"
@@ -21,10 +19,6 @@ Global
 		{FCFBB6CD-C493-44F6-81C6-DF74378DA528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCFBB6CD-C493-44F6-81C6-DF74378DA528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCFBB6CD-C493-44F6-81C6-DF74378DA528}.Release|Any CPU.Build.0 = Release|Any CPU
-		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{417A9BA0-342D-4109-AC25-98D5CD6EC702}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B4E1C91C-0D92-47AE-AD47-9C99985F1812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B4E1C91C-0D92-47AE-AD47-9C99985F1812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E1C91C-0D92-47AE-AD47-9C99985F1812}.Release|Any CPU.ActiveCfg = Release|Any CPU
